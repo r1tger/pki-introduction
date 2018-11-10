@@ -1,0 +1,25 @@
+digraph life_cycle {
+    layers="layer_01:layer_02:layer_03:layer_04:layer_05:layer_06";
+    layerselect="6";
+
+    splines=true;
+    sep="+25,25";
+    overlap=scalexy;
+    nodesep=0.6;
+
+    graph [bgcolor="#fafafa"];
+    node [shape=ellipse, color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"];
+    edge [color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="10pt"];
+    // Orange: #ec811b Blue: #23373b Grey: #e6e6e6
+
+    {rank=same; "02. Attestation"; "05. Revocation";}
+    {rank=same; "03. Issuance"; "04. Management";}
+
+    "01. Registration" [layer="all"]
+    "01. Registration" -> "02. Attestation" [layer="2,3,4,5,6", style=dashed];
+    "01. Registration" -> "03. Issuance" [layer="3,4,5,6", style=dashed];
+    "02. Attestation" -> "03. Issuance" [layer="4,5,6"];
+    "03. Issuance" -> "04. Management" [layer="5,6"];
+    "03. Issuance" -> "05. Revocation" [layer="6"];
+    "04. Management" -> "05. Revocation" [layer="6"];
+}

@@ -1,0 +1,13 @@
+digraph finite_state_machine {
+    layers="layer_01:layer_02:layer_03";
+    layerselect="3";
+
+    graph [bgcolor="#fafafa"];
+    rankdir=LR;
+    node [shape=ellipse, color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"];
+    edge [color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="10pt"];
+    // Orange: #ec811b Blue: #23373b Grey: #e6e6e6
+    Alice -> Alice [layer="all", label="01. Versleutel bericht (publiek)"];
+    Alice -> Bob [layer="2:3", label="02. Zend bericht"];
+    Bob -> Bob [layer="3", label="03. Ontsleutel bericht (privé)"];
+}

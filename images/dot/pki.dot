@@ -1,0 +1,19 @@
+digraph finite_state_machine {
+    splines=true;
+    sep="+25,25";
+    overlap=scalexy;
+    nodesep=0.6;
+
+    graph [bgcolor="#fafafa"];
+    node [shape=doublecircle, color="#ec811b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"]; e;
+    node [shape=circle, color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"];
+    edge [color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="10pt"];
+    // Orange: #ec811b Blue: #23373b Grey: #e6e6e6
+
+    a -> e;
+    b -> e;
+    c -> e;
+    d -> e;
+    f -> e;
+    g -> e;
+}

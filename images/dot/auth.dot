@@ -1,0 +1,14 @@
+digraph auth {
+    layers="layer_01:layer_02:layer_03:layer_04";
+    layerselect="1";
+
+    graph [bgcolor="#fafafa"];
+    rankdir=LR;
+    node [shape=ellipse, color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"];
+    edge [color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="10pt"];
+    // Orange: #ec811b Blue: #23373b Grey: #e6e6e6
+    Alice -> Bob [layer="1", label="01. Send information"];
+    Bob -> Bob [layer="1", label="02. Sign information (private)"];
+    Bob -> Alice [layer="1", label="03. Proof of Possession (PoP)"];
+    Alice -> Alice [layer="1", label="04. Verify PoP (public)"];
+}

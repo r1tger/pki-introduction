@@ -1,0 +1,14 @@
+digraph sign {
+    layers="layer_01:layer_02:layer_03";
+    layerselect="1";
+
+    graph [bgcolor="#fafafa"];
+    rankdir=LR;
+    //size="8,5"
+    node [shape=ellipse, color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"];
+    edge [color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="10pt"];
+    // Orange: #ec811b Blue: #23373b Grey: #e6e6e6
+    Alice -> Alice [layer="all", label="01. Sign message (private)"];
+    Alice -> Bob [layer="2:3", label="02. Send message"];
+    Bob -> Bob [layer="3", label="03. Verify message (public)"];
+}

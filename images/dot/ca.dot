@@ -1,0 +1,21 @@
+digraph finite_state_machine {
+    layers="layer_01:layer_02:layer_03";
+    layerselect="3";
+
+    splines=true;
+    sep="+25,25";
+    overlap=scalexy;
+    nodesep=0.6;
+
+    graph [bgcolor="#fafafa"];
+    node [shape=ellipse, color="#ec811b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"]; "Root CA";
+    node [shape=ellipse, color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="11pt"];
+    edge [color="#23373b", fontcolor="#23373b", fontname="Fira Sans light", fontsize="10pt"];
+    // Orange: #ec811b Blue: #23373b Grey: #e6e6e6
+
+    "Root CA" [layer="all"];
+    "Root CA" -> "Intermediate CA" [layer="2:3"];
+    "Intermediate CA" -> "End Entity 01" [layer="3"];
+    "Intermediate CA" -> "End Entity 02" [layer="3"];
+    "Intermediate CA" -> "End Entity 03" [layer="3"];
+}
